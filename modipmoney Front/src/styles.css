@@ -70,8 +70,10 @@
     width:200px;
     cursor: pointer;
   }
-  .bouton{
-    position: center;
+  .boutton {
+    text-align: center;
+    width: 100%;
+    padding: 10PX;
   }
   
   /* You can add global styles to this file, and also import other style files */

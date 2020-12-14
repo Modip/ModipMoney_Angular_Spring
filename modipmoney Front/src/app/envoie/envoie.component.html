@@ -4,46 +4,52 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <section class="get-in-touch">
-    <h1 class="title">Modip Money</h1>
+    <h3 class="title">Modip Money</h3>
     <form class="contact-form row">
         <fieldset class="form-field col-lg-6">
+            <legend> Emetteur </legend>
             <div class="form-field col-lg-6">
-                <input id="name" class="input-text js-input" type="text" required>
-                <label class="label" for="name">Prenom</label>
+                <input [(ngModel)]="newEnvoie.emetteur.prenom" name="prenom" class="input-text js-input" type="text" required>
+                <label class="label" for="name"> Prénom </label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="email" class="input-text js-input" type="email" required>
-                <label class="label" for="email">Nom</label>
+                <input [(ngModel)]="newEnvoie.emetteur.nom" name="nom"  class="input-text js-input" type="text" required>
+                <label class="label" for="name">Nom</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="company" class="input-text js-input" type="text" required>
-                <label class="label" for="company">Telephone</label>
+                <input [(ngModel)]="newEnvoie.emetteur.telephone"  name="telephone"  class="input-text js-input" type="number" required>
+                <label class="label" for="company">Téléphone</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="phone" class="input-text js-input" type="text" required>
+                <input [(ngModel)]="newEnvoie.montant" name="montant"  class="input-text js-input" type="number" required>
                 <label class="label" for="phone">Monant</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input [(ngModel)]= "newEnvoie.date"  name="date"  class="input-text js-input" type="date" required>
+                <label class="label" for="phone">Date</label>
             </div>
         </fieldset>
         <fieldset class="form-field col-lg-6">
+            <legend> Recepteur </legend>
             <div class="form-field col-lg-6">
-                <input id="name" class="input-text js-input" type="text" required>
+                <input [(ngModel)]="newEnvoie.recepteur.prenom"  name="prenomr"  class="input-text js-input" type="text" required>
                 <label class="label" for="name">Prenom</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="email" class="input-text js-input" type="email" required>
+                <input [(ngModel)]="newEnvoie.recepteur.nom"  name="nomr"  class="input-text js-input" type="text" required>
                 <label class="label" for="email">Nom</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="company" class="input-text js-input" type="text" required>
+                <input [(ngModel)]="newEnvoie.recepteur.telephone" name="telephoner"  class="input-text js-input" type="number" required>
                 <label class="label" for="company">Telephone</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="phone" class="input-text js-input" type="text" required>
+                <input [(ngModel)]="newEnvoie.recepteur.cni"  name="cnir"  class="input-text js-input" type="number" required>
                 <label class="label" for="phone">Cni</label>
             </div>
         </fieldset>
         <div class="bouton">
-            <input class="submit-btn" type="submit" value="Envoyer">
+            <input class="submit-btn" type="submit" (click)="ajouterEnvoie()" value="Valider">
         </div>
     </form>
 </section>
