@@ -14,17 +14,21 @@ import { EnvoieService } from '../services/envoie.service';
 export class EnvoieComponent implements OnInit {
 
   newEnvoie = new Envoie();
+
+
   
+  constructor(private envoieService: EnvoieService) {
 
-  constructor(private envoieService : EnvoieService) { }
+    
+   }
 
-  ajouterEnvoie(){
+  ajouterEnvoie() {
 
-      //C'est pour appeller ajouterEnvoi qui sur le bouton submit (onclick)
-      this.envoieService.ajouterEnvoie(this.newEnvoie).subscribe(
+    //C'est pour appeller ajouterEnvoi qui sur le bouton submit (onclick)
+    this.envoieService.ajouterEnvoie(this.newEnvoie).subscribe(
       data => console.log(data)
-      
-   );
+
+    );
 
 
   }

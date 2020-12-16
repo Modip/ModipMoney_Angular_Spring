@@ -11,14 +11,15 @@ export class EnvoieService {
 
   url = 'http://localhost:8080/modipmoney/'; //variable pour avoir le lien de l'API
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
 
-  ajouterEnvoie(envoi: Envoie): Observable<Object>{
+  ajouterEnvoie(envoi: Envoie): Observable<Object> {
 
-    return this.http.post(this.url+'Envoie/add',envoi);  
+    return this.http.post(this.url + 'Envoie/add', envoi);
   }
 
-
-
+  listerEnvoie() {
+    return this.http.get<any>(this.url + 'Envoie');
+  }
 }
